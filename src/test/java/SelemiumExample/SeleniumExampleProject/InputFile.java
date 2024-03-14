@@ -18,31 +18,31 @@ public class InputFile extends BaseClass {
 	@Test(priority = 1)
 	public void validCreadentials() throws Exception {
 		//implict wait syntax -- NosuchElement Exception, timeout
-		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS); // selenium 3
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5)); // Selenium 4
-		
-		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20)); // To wait till page gets loaded 
-		
-		//Explict wait syntax -- ElementToVisibleException
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.visibilityOf(By.id("img"))); // selenium 3
-		
-		
-		WebDriverWait wait = new WebDriverWait(Duration.ofMillis(20));
-		wait.until(ExpectedConditions.visibilityOf(By.id("img"))); // selenium 4
-		
-		
-		//Fluent wait
-		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
-				.withTimeout(30, TimeUnit.MILLISECONDS)
-				.polling(10, TimeUnit.SECONDS)
-				.ignoring(NoSuchMethodException.class); //Selenium 3
-		
-		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
-				.withTimeout(Duration.ofSeconds(10))
-				.polling(10, TimeUnit.SECONDS)
-				.ignoring(NoSuchMethodException.class); //Selenium 4
-		
+		/*
+		 * driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS); // selenium 3
+		 * driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5)); // Selenium
+		 * 4
+		 * 
+		 * driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20)); // To
+		 * wait till page gets loaded
+		 * 
+		 * //Explict wait syntax -- ElementToVisibleException WebDriverWait wait = new
+		 * WebDriverWait(driver, 10);
+		 * wait.until(ExpectedConditions.visibilityOf(By.id("img"))); // selenium 3
+		 * 
+		 * 
+		 * WebDriverWait wait = new WebDriverWait(Duration.ofMillis(20));
+		 * wait.until(ExpectedConditions.visibilityOf(By.id("img"))); // selenium 4
+		 * 
+		 * 
+		 * //Fluent wait Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
+		 * .withTimeout(30, TimeUnit.MILLISECONDS) .polling(10, TimeUnit.SECONDS)
+		 * .ignoring(NoSuchMethodException.class); //Selenium 3
+		 * 
+		 * Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
+		 * .withTimeout(Duration.ofSeconds(10)) .polling(10, TimeUnit.SECONDS)
+		 * .ignoring(NoSuchMethodException.class); //Selenium 4
+		 */		
 		
 		
 		WebElement userName = driver.findElement(By.cssSelector("#user-name"));
