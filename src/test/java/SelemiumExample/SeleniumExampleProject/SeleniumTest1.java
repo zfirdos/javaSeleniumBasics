@@ -19,22 +19,24 @@ public class SeleniumTest1 {
 		//waits - to hold the operation 
 		
 		//Thread.sleep(4000);
-		chromeDriver.get("https://www.google.com/");
-		Thread.sleep(2000);
-		
+		/*
+		 * chromeDriver.get("https://www.google.com/"); Thread.sleep(2000);
+		 */
+		chromeDriver.navigate().to("https://www.google.com/");
+		System.out.println("Title::::"+chromeDriver.getTitle());
+		System.out.println("URL:::"+chromeDriver.getCurrentUrl());
 		
 		  chromeDriver.manage().window().maximize(); //browser maximize //To refresh	  the page 
-		  chromeDriver.navigate().refresh(); //method chaining
+		  //chromeDriver.navigate().refresh(); //method chaining
 		  Thread.sleep(2000); 
-		  chromeDriver.get("https://www.flipkart.com/");
-		  Thread.sleep(2000); 
-		  chromeDriver.manage().window().minimize();
-		  Thread.sleep(1000);
-		  chromeDriver.manage().window().maximize();
-		  chromeDriver.navigate().back(); 
-		  Thread.sleep(2000);
-		  chromeDriver.navigate().forward(); 
-		  Thread.sleep(4000);
+		  //chromeDriver.get("https://www.flipkart.com/");
+		  
+		  //Thread.sleep(2000); 
+			/*
+			 * chromeDriver.manage().window().minimize(); Thread.sleep(1000);
+			 * chromeDriver.manage().window().maximize(); chromeDriver.navigate().back();
+			 * Thread.sleep(2000); chromeDriver.navigate().forward(); Thread.sleep(4000);
+			 */
 		 
 		 
 		//chromeDriver.close(); //close the current browser
